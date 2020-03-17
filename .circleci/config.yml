@@ -1,9 +1,8 @@
-version: 2.1
-
+version: 2
 jobs:
-  bash_5_0:
+  buster:
     docker:
-      - image: bash:5.0
+      - image: sdolenc/debian-circleci:buster
     <<: &commonSteps
       steps:
         - checkout
@@ -12,47 +11,39 @@ jobs:
             command: |
               bash --version
               bash scripts/test.sh
-  bash_4_4:
+  stretch:
     docker:
-      - image: bash:4.4
+      - image: sdolenc/debian-circleci:stretch
     <<: *commonSteps
-  bash_4_3:
+  jessie:
     docker:
-      - image: bash:4.3
+      - image: sdolenc/debian-circleci:jessie
     <<: *commonSteps
-  bash_4_2:
+  wheezy:
     docker:
-      - image: bash:4.2
+      - image: sdolenc/debian-circleci:wheezy
     <<: *commonSteps
-  bash_4_1:
+  squeeze:
     docker:
-      - image: bash:4.1
+      - image: sdolenc/debian-circleci:squeeze
     <<: *commonSteps
-  bash_4_0:
+  lenny:
     docker:
-      - image: bash:4.0
+      - image: sdolenc/debian-circleci:lenny
     <<: *commonSteps
-  bash_3_2:
+  etch:
     docker:
-      - image: bash:3.2
+      - image: sdolenc/debian-circleci:etch
     <<: *commonSteps
-  bash_3_1:
-    docker:
-      - image: bash:3.1
-    <<: *commonSteps
-  bash_3_0:
-    docker:
-      - image: bash:3.0
-    <<: *commonSteps
-  bash_2_05b:
+  sarge:
     docker:
       - image: sdolenc/debian-circleci:sarge
     <<: *commonSteps
-  bash_2_05a:
+  woody:
     docker:
       - image: sdolenc/debian-circleci:woody
     <<: *commonSteps
-  bash_2_03:
+  potato:
     docker:
       - image: sdolenc/debian-circleci:potato
     <<: *commonSteps
@@ -60,15 +51,13 @@ workflows:
   version: 2
   all:
     jobs:
-      - bash_5_0
-      - bash_4_4
-      - bash_4_3
-      - bash_4_2
-      - bash_4_1
-      - bash_4_0
-      - bash_3_2
-      - bash_3_1
-      - bash_3_0
-      - bash_2_05b
-      - bash_2_05a
-      - bash_2_03
+      - buster
+      - stretch
+      - jessie
+      - wheezy
+      - squeeze
+      - lenny
+      - etch
+      - sarge
+      - woody
+      - potato
