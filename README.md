@@ -1,6 +1,6 @@
 # critic.sh
 
-![CI](https://github.com/Checksum/critic.sh/workflows/CI/badge.svg?branch=master)
+![CI](https://github.com/sdolenc/critic.sh/workflows/CI/badge.svg?branch=test-bash-verions)
 
 ---
 
