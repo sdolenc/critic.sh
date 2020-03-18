@@ -10,9 +10,10 @@ jobs:
       steps:
         - checkout
         - run:
-            shell: /bin/sh -eu
             command: |
               bash --version
+              apk add --no-cache gawk
+              echo 'alias awk="gawk"' >> ~/.bashrc 
               bash scripts/test.sh
   bash_4_4:
     docker:
@@ -71,6 +72,6 @@ workflows:
       - bash_3_2
       - bash_3_1
       - bash_3_0
-      - bash_2_05b
-      - bash_2_05a
-      - bash_2_03
+#      - bash_2_05b
+#      - bash_2_05a
+#      - bash_2_03
