@@ -8,7 +8,7 @@ jobs:
       steps:
         - checkout
         - run:
-            shell: /bin/sh -e
+            shell: /bin/sh -eu
             command: |
               bash --version
               bash scripts/test.sh
