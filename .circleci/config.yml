@@ -49,15 +49,15 @@ jobs:
     <<: *commonSteps
   bash_2_05b:
     docker:
-      - image: sdolenc/debian-circleci:sarge
+      - image: debian/eol:sarge
     <<: *commonSteps
   bash_2_05a:
     docker:
-      - image: sdolenc/debian-circleci:woody
+      - image: debian/eol:woody
     <<: *commonSteps
   bash_2_03:
     docker:
-      - image: sdolenc/debian-circleci:potato
+      - image: debian/eol:potato
     <<: *commonSteps
 workflows:
   version: 2
