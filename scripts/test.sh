@@ -72,4 +72,7 @@ else
     echo "Output matches"
 fi
 
+set -x
+bash --version
+
 exit $exitCode
